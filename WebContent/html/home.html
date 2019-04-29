@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>home</title>
+
+
+<link rel="stylesheet" type="text/css" href="/project_term/css/home.css">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+<script>
+var img=new Array(7);
+img[0]="/project_term/images/1.jpg";
+img[1]="/project_term/images/2.jpg";
+img[2]="/project_term/images/3.jpg";
+img[3]="/project_term/images/4.jpg";
+img[4]="/project_term/images/5.jpg";
+img[5]="/project_term/images/6.jpg";
+img[6]="/project_term/images/7.jpg";
+idx=0;
+function changePic()
+{
+	var im=document.getElementById("img1");
+	im.src=img[idx];
+	idx++;.0
+	if(idx>5)
+		{
+		idx=0;
+		}
+	setTimeout("changePic()",5000);
+}
+	
+function validateForm() {
+    var x = document.forms["form"]["userid"].value;
+    if (x == "") {
+        alert("enter the userid");
+        return false;
+    }
+}
+</script>
+
+<style >
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: grey;
+   text-align: center;
+}
+body {background-color: coral;}
+</style>
+</head>
+
+
+<body onload="changePic()" class="container"  >  
+<div class="container-fluid">
+
+<h1 align="center" style="color:black;font-family: cursive;"> S.Y.T-Application </h1>
+<h6 align="center" style="color:black;font-family: cursive;"> Save your time </h6>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Food for thought</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li class='last'><a href='/project_term/jsp/reservation.jsp' target='_blank'><span>Reservation</span></a></li>
+  	 <li class='last'><a href='/project_term/jsp/Menu.jsp' target='_blank'><span>order</span></a></li>
+   	<li class='last'><a href='/project_term/jsp/resturant.jsp' target='_blank'><span>Restaurant</span></a></li>
+    <li class='last'><a href='/project_term/jsp/avaliablity.jsp' target='_blank'><span>Avail</span></a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/project_term/jsp/registration.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in" ></span> Sign in</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Sign in</h4>
+        </div>
+        <div class="modal-body">
+          <div>
+<form method="post" onsubmit="return validateForm()" name="form">
+<div class="form-group row" >
+  <div class="col-xs-10">
+      <label for="userid">User_id:</label>
+      <input type="text" class="form-control" id="userid" placeholder="Enter User_id" name="userid">
+    </div>
+    </div>
+    <div class="form-group row">
+    <div class="col-xs-10">
+      <label for="password">Password:</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+    </div>
+    </div>
+     <div class="checkbox">
+      <label><input type="checkbox" name="remember"> Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-default">Sign in</button>
+</form>
+
+</div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+
+<div  class="container-fluid" id='login' style="left:900px;top:180px;width:350px;position:absolute;padding:10px;background-color:black; color:grey;">
+<div id="login" style="background-color:black; color:red;height: 360px"  >
+<h3>Hot shot take away!!</h3>
+</div>
+</div>
+
+
+<div id="login" style="left:115px;top:180px;width:750px;height:400px;position:absolute;background-color:green; color:black;">
+<img src="/project_term/images/1.jpg" id="img1" class="img-rounded"/>
+</div>
+
+<div class="footer"  style="left:115px;width:1138px">
+<div class="container-fluid">
+<p>Copyright © 2018 · S.Y.T-Application.com · All Rights Reserved
+</div>
+</div>
+
+</body>
+</html>
